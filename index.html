@@ -277,31 +277,30 @@ img { display: block; max-width: 100%; }
   height: 380px; margin: 0 auto 40px; cursor: pointer;
 }
 .social-cluster img {
-  position: absolute; width: 130px; height: 185px;
-  object-fit: cover; border-radius: 16px;
+  position: absolute; width: 120px; height: 170px;
+  object-fit: cover; border-radius: 14px;
   filter: drop-shadow(0 4px 12px rgba(0,0,0,0.15));
   -webkit-backface-visibility: hidden; backface-visibility: hidden;
-  will-change: transform;
-  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
-              left 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
-              top 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
-              filter 0.4s ease;
+  will-change: transform, width, height;
+  transition: all 0.65s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
-.social-cluster img:nth-child(1) { left: 2%;  top: 10%; transform: rotate(-12deg) translateZ(0); z-index: 3; }
-.social-cluster img:nth-child(2) { left: 15%; top: 0%;  transform: rotate(-5deg) translateZ(0); z-index: 4; }
-.social-cluster img:nth-child(3) { left: 33%; top: -5%; transform: rotate(0deg) translateZ(0); z-index: 7; }
-.social-cluster img:nth-child(4) { left: 51%; top: 0%;  transform: rotate(5deg) translateZ(0); z-index: 5; }
-.social-cluster img:nth-child(5) { left: 67%; top: 8%;  transform: rotate(10deg) translateZ(0); z-index: 6; }
-.social-cluster img:nth-child(6) { left: 24%; top: 50%; transform: rotate(-8deg) translateZ(0); z-index: 2; }
-.social-cluster img:nth-child(7) { left: 46%; top: 48%; transform: rotate(6deg) translateZ(0); z-index: 1; }
-.social-cluster:hover img:nth-child(1) { left: 38%; top: 30%; transform: rotate(-6deg) translateZ(0); }
-.social-cluster:hover img:nth-child(2) { left: 40%; top: 28%; transform: rotate(4deg) translateZ(0); }
-.social-cluster:hover img:nth-child(3) { left: 36%; top: 26%; transform: rotate(-2deg) translateZ(0); }
-.social-cluster:hover img:nth-child(4) { left: 42%; top: 32%; transform: rotate(7deg) translateZ(0); }
-.social-cluster:hover img:nth-child(5) { left: 37%; top: 30%; transform: rotate(-4deg) translateZ(0); }
-.social-cluster:hover img:nth-child(6) { left: 39%; top: 28%; transform: rotate(3deg) translateZ(0); }
-.social-cluster:hover img:nth-child(7) { left: 41%; top: 32%; transform: rotate(-1deg) translateZ(0); }
-.social-cluster:hover img { filter: drop-shadow(0 8px 20px rgba(0,0,0,0.25)); }
+/* Default: contracted/stacked */
+.social-cluster img:nth-child(1) { left: 38%; top: 26%; transform: rotate(-6deg) translateZ(0); z-index: 7; }
+.social-cluster img:nth-child(2) { left: 40%; top: 24%; transform: rotate(4deg) translateZ(0); z-index: 6; }
+.social-cluster img:nth-child(3) { left: 36%; top: 28%; transform: rotate(-2deg) translateZ(0); z-index: 5; }
+.social-cluster img:nth-child(4) { left: 42%; top: 22%; transform: rotate(7deg) translateZ(0); z-index: 4; }
+.social-cluster img:nth-child(5) { left: 37%; top: 30%; transform: rotate(-4deg) translateZ(0); z-index: 3; }
+.social-cluster img:nth-child(6) { left: 41%; top: 25%; transform: rotate(3deg) translateZ(0); z-index: 2; }
+.social-cluster img:nth-child(7) { left: 39%; top: 29%; transform: rotate(-1deg) translateZ(0); z-index: 1; }
+/* Hover: explode outward + cards get bigger */
+.social-cluster:hover img { width: 155px; height: 220px; border-radius: 18px; filter: drop-shadow(0 10px 28px rgba(0,0,0,0.22)); }
+.social-cluster:hover img:nth-child(1) { left: -2%; top: 6%;  transform: rotate(-14deg) translateZ(0); z-index: 3; }
+.social-cluster:hover img:nth-child(2) { left: 11%; top: -4%; transform: rotate(-6deg) translateZ(0); z-index: 4; }
+.social-cluster:hover img:nth-child(3) { left: 28%; top: -8%; transform: rotate(1deg) translateZ(0); z-index: 7; }
+.social-cluster:hover img:nth-child(4) { left: 46%; top: -4%; transform: rotate(6deg) translateZ(0); z-index: 5; }
+.social-cluster:hover img:nth-child(5) { left: 62%; top: 3%;  transform: rotate(12deg) translateZ(0); z-index: 6; }
+.social-cluster:hover img:nth-child(6) { left: 18%; top: 46%; transform: rotate(-9deg) translateZ(0); z-index: 2; }
+.social-cluster:hover img:nth-child(7) { left: 40%; top: 44%; transform: rotate(7deg) translateZ(0); z-index: 1; }
 .social-cta-title {
   font-family: var(--serif); font-weight: 400; font-style: italic;
   font-size: clamp(22px, 2.5vw, 32px); margin-bottom: 16px;
