@@ -1,0 +1,1378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Michael Jones — Founder, Speaker, Investor</title>
+<meta name="description" content="Michael Jones is a founder, speaker, and investor known for building and scaling consumer technology and brand-driven businesses.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+/* ========== RESET & BASE ========== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #F0F0F0;
+  color: #1B1A1A;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+a { text-decoration: none; color: inherit; }
+img { display: block; max-width: 100%; }
+ul { list-style: none; }
+
+/* ========== VARIABLES ========== */
+:root {
+  --dark: #1B1A1A;
+  --white: #FFFFFF;
+  --accent: #E8734A;
+  --bg-light: #F0F0F0;
+  --bg-warm: #F5F5ED;
+  --footer-bg: #403F3F;
+  --grey: #A4A4A4;
+  --teal: #004A55;
+  --blue: #3C749F;
+  --yellow: #FDDF59;
+  --serif: 'DM Serif Display', Georgia, serif;
+  --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --max-width: 1200px;
+  --side-padding: clamp(20px, 5vw, 80px);
+}
+
+/* ========== NAV ========== */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--side-padding);
+  transition: background 0.3s;
+}
+.nav.scrolled {
+  background: rgba(27,26,26,0.95);
+  backdrop-filter: blur(12px);
+}
+.nav-links {
+  display: flex;
+  gap: 28px;
+}
+.nav-links a {
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--white);
+  letter-spacing: -0.01em;
+  transition: opacity 0.2s;
+}
+.nav-links a:hover { opacity: 0.7; }
+.nav-logo {
+  font-weight: 900;
+  font-size: 20px;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.nav-cta {
+  background: var(--accent);
+  color: var(--white);
+  font-weight: 800;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  padding: 12px 20px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s;
+  display: inline-block;
+}
+.nav-cta:hover { transform: scale(1.03); opacity: 0.9; }
+
+/* ========== HERO ========== */
+.hero {
+  position: relative;
+  padding-top: 0;
+}
+.hero-image-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  max-height: 85vh;
+  background: var(--dark);
+}
+.hero-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+/* Marquee */
+.marquee-section {
+  overflow: hidden;
+  padding: 40px 0 20px;
+  background: var(--bg-light);
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 32px;
+}
+.marquee-track.scroll-left {
+  animation: scrollLeft 30s linear infinite;
+}
+.marquee-track.scroll-right {
+  animation: scrollRight 30s linear infinite;
+}
+@keyframes scrollLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes scrollRight {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+.marquee-text-dark {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: clamp(48px, 8vw, 140px);
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: var(--dark);
+  white-space: nowrap;
+}
+.marquee-text-accent {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(48px, 8vw, 140px);
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: var(--accent);
+  white-space: nowrap;
+  font-style: italic;
+}
+.marquee-separator {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: currentColor;
+  border-radius: 50%;
+  margin: 0 20px;
+  vertical-align: middle;
+  opacity: 0.3;
+}
+
+/* Hero intro */
+.hero-intro {
+  background: var(--bg-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(60px, 10vw, 120px) var(--side-padding);
+}
+.hero-intro p {
+  max-width: 780px;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(24px, 3.5vw, 44px);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--dark);
+  text-align: center;
+  font-style: italic;
+}
+.hero-intro .accent-text {
+  color: var(--accent);
+}
+
+/* ========== BIO ========== */
+.bio {
+  background: var(--white);
+  position: relative;
+  padding: 0;
+}
+.bio-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 6vw, 100px);
+  padding: 0 var(--side-padding);
+  align-items: start;
+}
+.bio-photo {
+  position: sticky;
+  top: 80px;
+}
+.bio-photo img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+.bio-resume {
+  padding: clamp(60px, 8vw, 120px) 0 clamp(60px, 6vw, 80px);
+}
+.bio-resume-intro {
+  font-weight: 500;
+  font-size: clamp(18px, 1.8vw, 22px);
+  line-height: 1.55;
+  letter-spacing: -0.02em;
+  margin-bottom: 48px;
+}
+
+/* Work history */
+.work-item {
+  padding: 32px 0;
+  border-top: 1px solid rgba(27,26,26,0.12);
+}
+.work-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.work-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 13px;
+  color: var(--white);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.work-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 10px;
+}
+.work-icon svg {
+  width: 32px;
+  height: 32px;
+}
+.work-date {
+  display: inline-block;
+  background: var(--bg-light);
+  border-radius: 100px;
+  padding: 5px 16px;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: -0.01em;
+}
+.work-title {
+  font-weight: 600;
+  font-size: clamp(20px, 2vw, 24px);
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+}
+.work-desc {
+  font-weight: 400;
+  font-size: clamp(15px, 1.4vw, 17px);
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+  color: rgba(27,26,26,0.65);
+}
+.work-desc strong {
+  color: var(--dark);
+  font-weight: 600;
+}
+
+/* Speaker callout */
+.speaker-callout {
+  max-width: 820px;
+  margin: 0 auto;
+  text-align: center;
+  padding: clamp(60px, 8vw, 100px) var(--side-padding);
+}
+.speaker-callout p {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(20px, 2.5vw, 30px);
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+  font-style: italic;
+}
+
+/* Stats */
+.stats-section {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: 700px;
+  overflow: hidden;
+}
+.stats-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.stats-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.8) 100%);
+}
+.stats-row {
+  position: absolute;
+  bottom: clamp(24px, 5vw, 80px);
+  left: clamp(20px, 5vw, 80px);
+  display: flex;
+  gap: clamp(32px, 6vw, 96px);
+}
+.stat-item { color: var(--white); }
+.stat-label {
+  font-weight: 800;
+  font-size: clamp(10px, 1.2vw, 14px);
+  text-transform: uppercase;
+  opacity: 0.85;
+  margin-bottom: 4px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+.stat-number {
+  font-weight: 700;
+  font-size: clamp(40px, 8vw, 130px);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+.stat-number .dollar {
+  font-size: 0.7em;
+  letter-spacing: -0.04em;
+}
+
+/* ========== KEY OFFERINGS ========== */
+.offerings {
+  background: var(--white);
+  padding: clamp(60px, 8vw, 112px) var(--side-padding);
+  border-bottom: 1px solid rgba(27,26,26,0.1);
+}
+.offerings-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+.section-label {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 17px;
+  letter-spacing: -0.01em;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+.offerings-headline {
+  font-weight: 600;
+  font-size: clamp(24px, 3vw, 42px);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin-bottom: clamp(40px, 5vw, 64px);
+  max-width: 1000px;
+}
+.offering-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 24px 0;
+  border-top: 1px solid rgba(27,26,26,0.1);
+  gap: 24px;
+}
+.offering-name {
+  font-weight: 700;
+  font-size: clamp(15px, 1.6vw, 22px);
+  text-transform: uppercase;
+  letter-spacing: 0;
+  flex-shrink: 0;
+}
+.offering-sub {
+  font-weight: 400;
+  font-size: clamp(14px, 1.4vw, 18px);
+  letter-spacing: -0.01em;
+  color: rgba(27,26,26,0.6);
+  text-align: right;
+}
+
+/* ========== TOPICS ========== */
+.topics {
+  background: var(--bg-light);
+  padding: clamp(60px, 8vw, 112px) var(--side-padding);
+}
+.topics-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+.topics-heading {
+  font-weight: 600;
+  font-size: clamp(24px, 3vw, 42px);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin-bottom: clamp(40px, 5vw, 64px);
+}
+.topic-card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: clamp(24px, 3vw, 40px) clamp(24px, 3.5vw, 48px) clamp(32px, 4vw, 56px);
+  margin-bottom: 20px;
+}
+.topic-label {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--accent);
+  letter-spacing: -0.01em;
+  margin-bottom: 12px;
+  font-style: italic;
+}
+.topic-question {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(22px, 2.5vw, 36px);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+.topic-divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(27,26,26,0.1);
+  margin: 20px 0;
+}
+.topic-body {
+  display: flex;
+  gap: 48px;
+}
+.topic-body-spacer {
+  flex: 0 0 40%;
+}
+.topic-body-content {
+  flex: 1;
+}
+.topic-desc {
+  font-size: clamp(15px, 1.4vw, 17px);
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  margin-bottom: 28px;
+  color: rgba(27,26,26,0.75);
+}
+.topic-bullets {
+  margin-bottom: 28px;
+}
+.topic-bullets li {
+  font-weight: 500;
+  font-size: clamp(15px, 1.4vw, 17px);
+  line-height: 1.5;
+  margin-bottom: 10px;
+  padding-left: 18px;
+  position: relative;
+}
+.topic-bullets li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+.topic-takeaway {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+.topic-takeaway-dot {
+  width: 16px;
+  height: 16px;
+  background: var(--accent);
+  border-radius: 4px;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+.topic-takeaway-label {
+  font-weight: 600;
+  font-size: clamp(15px, 1.4vw, 17px);
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+.topic-takeaway-text {
+  font-size: clamp(15px, 1.4vw, 17px);
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  margin-top: 4px;
+  color: rgba(27,26,26,0.75);
+}
+.topic-pdf-note {
+  font-size: 16px;
+  line-height: 1.4;
+  opacity: 0.5;
+  margin-top: 20px;
+  font-style: italic;
+}
+
+/* ========== PRESS ========== */
+.press {
+  background: var(--white);
+  padding: clamp(60px, 8vw, 112px) var(--side-padding);
+}
+.press-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+.press-header {
+  margin-bottom: clamp(40px, 5vw, 64px);
+}
+.press-subtitle {
+  font-weight: 500;
+  font-size: clamp(22px, 2.8vw, 40px);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  max-width: 800px;
+}
+.press-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px 28px;
+}
+.press-card { cursor: pointer; transition: transform 0.2s; }
+.press-card:hover { transform: translateY(-4px); }
+.press-card-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 14px;
+}
+.press-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.press-card-image.bg-teal { background: var(--teal); }
+.press-card-image.bg-dark { background: var(--dark); }
+.press-card-image.bg-blue { background: var(--blue); }
+.press-card-image.bg-yellow { background: var(--yellow); }
+.press-card-image.bg-light { background: var(--bg-light); }
+.press-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: var(--white);
+  border-radius: 100px;
+  padding: 4px 12px;
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: -0.01em;
+}
+.press-card-title {
+  font-weight: 600;
+  font-size: clamp(15px, 1.4vw, 17px);
+  line-height: 1.3;
+  margin-bottom: 6px;
+}
+.press-card-desc {
+  font-weight: 400;
+  font-size: clamp(14px, 1.2vw, 15px);
+  line-height: 1.4;
+  opacity: 0.6;
+  margin-bottom: 10px;
+}
+.press-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: -0.01em;
+  color: var(--dark);
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 2px;
+  transition: color 0.2s;
+}
+.press-cta:hover { color: var(--accent); }
+.press-cta svg {
+  width: 14px;
+  height: 14px;
+  stroke: var(--accent);
+}
+
+/* ========== PARTNERS ========== */
+.partners {
+  background: var(--bg-light);
+  padding: clamp(60px, 8vw, 112px) var(--side-padding) clamp(40px, 5vw, 80px);
+  overflow: hidden;
+}
+.partners-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  gap: clamp(32px, 5vw, 80px);
+  margin-bottom: clamp(40px, 5vw, 80px);
+}
+.partners-heading {
+  font-weight: 600;
+  font-size: clamp(24px, 3vw, 42px);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  flex: 0 0 45%;
+}
+.partners-quote {
+  font-weight: 400;
+  font-size: clamp(15px, 1.4vw, 17px);
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  color: rgba(27,26,26,0.7);
+  max-width: 500px;
+}
+.logo-marquee {
+  overflow: hidden;
+  padding: 32px 0;
+}
+.logo-track {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  width: max-content;
+  animation: scrollLogos 20s linear infinite;
+}
+@keyframes scrollLogos {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.logo-track img {
+  height: 48px;
+  width: auto;
+  filter: grayscale(100%);
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+.logo-track img:hover { opacity: 1; }
+
+/* ========== SOCIALS ========== */
+.socials {
+  background: var(--bg-light);
+  padding: 0 var(--side-padding) clamp(60px, 8vw, 112px);
+}
+.socials-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+.socials-photos {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+}
+.socials-photos img {
+  width: clamp(100px, 12vw, 160px);
+  height: clamp(150px, 18vw, 240px);
+  object-fit: cover;
+  border-radius: 24px;
+}
+.socials-photos img:nth-child(odd) { margin-top: 32px; }
+.socials-cta {
+  text-align: center;
+}
+.socials-cta h3 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(22px, 2.5vw, 36px);
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.social-links a {
+  font-weight: 800;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  transition: color 0.2s;
+}
+.social-links a:hover { color: var(--accent); }
+
+/* ========== FOOTER ========== */
+.footer {
+  background: var(--footer-bg);
+  color: var(--white);
+  padding: clamp(40px, 5vw, 56px) var(--side-padding) clamp(24px, 3vw, 40px);
+}
+.footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: clamp(40px, 6vw, 80px);
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.footer-headline {
+  font-weight: 400;
+  font-size: clamp(22px, 3vw, 44px);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  max-width: 660px;
+}
+.footer-book-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--white);
+  color: var(--dark);
+  font-weight: 800;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  padding: 6px 6px 6px 24px;
+  border-radius: 2000px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+.footer-book-btn:hover { transform: scale(1.03); }
+.footer-book-btn .arrow-circle {
+  width: 44px;
+  height: 44px;
+  background: var(--dark);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer-book-btn .arrow-circle svg {
+  stroke: var(--white);
+  width: 18px;
+  height: 18px;
+}
+.footer-divider {
+  width: 100%;
+  height: 1px;
+  background: #515050;
+  margin-bottom: 28px;
+}
+.footer-columns {
+  display: flex;
+  gap: clamp(40px, 6vw, 80px);
+  margin-bottom: clamp(40px, 6vw, 80px);
+  flex-wrap: wrap;
+}
+.footer-col h4 {
+  font-weight: 500;
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+.footer-col a {
+  display: block;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.3;
+  opacity: 0.7;
+  margin-bottom: 8px;
+  transition: opacity 0.2s;
+}
+.footer-col a:hover { opacity: 1; }
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.footer-copyright {
+  font-weight: 400;
+  font-size: 15px;
+  letter-spacing: -0.01em;
+}
+.footer-backtop {
+  font-weight: 400;
+  font-size: 15px;
+  color: var(--grey);
+  transition: color 0.2s;
+}
+.footer-backtop:hover { color: var(--white); }
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 1024px) {
+  .bio-inner {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .bio-photo {
+    position: relative;
+    top: 0;
+    max-width: 100%;
+  }
+  .bio-photo img {
+    aspect-ratio: 4 / 3;
+  }
+  .bio-resume {
+    padding: clamp(32px, 5vw, 60px) 0;
+  }
+  .topic-body {
+    flex-direction: column;
+    gap: 0;
+  }
+  .topic-body-spacer {
+    display: none;
+  }
+  .partners-inner {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links { gap: 16px; }
+  .nav-links a { font-size: 13px; }
+  .nav-logo { font-size: 16px; }
+  .nav-cta { font-size: 12px; padding: 10px 16px; }
+
+  .hero-image-wrapper {
+    aspect-ratio: 4 / 5;
+    max-height: 70vh;
+  }
+
+  .press-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px 16px;
+  }
+
+  .stats-section {
+    aspect-ratio: 3 / 4;
+  }
+  .stats-row {
+    flex-wrap: wrap;
+    gap: 20px 40px;
+  }
+
+  .offering-row {
+    flex-direction: column;
+    gap: 4px;
+  }
+  .offering-sub {
+    text-align: left;
+  }
+
+  .socials-photos img:nth-child(odd) { margin-top: 20px; }
+
+  .footer-top {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-links { display: none; }
+  .nav-logo { position: static; transform: none; }
+
+  .hero-image-wrapper {
+    aspect-ratio: 3 / 4;
+    max-height: 65vh;
+  }
+
+  .press-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-section {
+    aspect-ratio: 9 / 16;
+    max-height: 500px;
+  }
+  .stats-row {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .social-links {
+    gap: 16px;
+  }
+
+  .footer-columns {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .socials-photos {
+    gap: 8px;
+  }
+  .socials-photos img {
+    width: 80px;
+    height: 120px;
+    border-radius: 16px;
+  }
+}
+
+/* ========== HAMBURGER MENU (mobile) ========== */
+.nav-hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.nav-hamburger svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--white);
+}
+@media (max-width: 480px) {
+  .nav-hamburger { display: block; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav class="nav" id="nav">
+  <div class="nav-links">
+    <a href="#bio">About</a>
+    <a href="#offerings">Speaking</a>
+    <a href="#press">Press</a>
+  </div>
+  <a href="#" class="nav-logo">Michael Jones</a>
+  <a href="mailto:booking@mjonesone.com" class="nav-cta">Book Mike</a>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="hero">
+  <div class="hero-image-wrapper">
+    <img src="images/hero-photo.png" alt="Michael Jones">
+  </div>
+
+  <!-- Hero Intro -->
+  <div class="hero-intro">
+    <p>Michael is a <span class="accent-text">founder, speaker,</span> and <span class="accent-text">investor</span> known for building and scaling consumer technology and brand-driven businesses.</p>
+  </div>
+</section>
+
+<!-- ===== BIO ===== -->
+<section class="bio" id="bio">
+  <div class="bio-inner">
+    <div class="bio-photo">
+      <img src="images/mike-bio.png" alt="Michael Jones at desk">
+    </div>
+    <div class="bio-resume">
+      <p class="bio-resume-intro">He is a General Partner at Science Inc., a Santa Monica-based venture studio that co-founds companies from day zero and helps founders turn early conviction into operating momentum&mdash;product, distribution, hiring, and go-to-market execution.</p>
+
+      <!-- Science Inc -->
+      <div class="work-item">
+        <div class="work-header">
+          <div class="work-icon" style="background:#F0F0F0;">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="16" cy="16" r="3" fill="#E8734A"/>
+              <circle cx="16" cy="16" r="10" stroke="#1B1A1A" stroke-width="1.5" fill="none"/>
+              <circle cx="16" cy="6" r="2" fill="#1B1A1A"/>
+              <circle cx="24.7" cy="21" r="2" fill="#1B1A1A"/>
+              <circle cx="7.3" cy="21" r="2" fill="#1B1A1A"/>
+              <circle cx="7.3" cy="11" r="2" fill="#1B1A1A"/>
+              <circle cx="24.7" cy="11" r="2" fill="#1B1A1A"/>
+              <circle cx="16" cy="26" r="2" fill="#1B1A1A"/>
+            </svg>
+          </div>
+          <span class="work-date">2011 - Present</span>
+        </div>
+        <h3 class="work-title">Science Inc</h3>
+        <p class="work-desc">In 2011, Jones founded Science Inc. to apply a studio approach to company creation: centralized operating capabilities, rapid testing, and repeatable growth systems designed to reduce the friction that slows most early-stage companies. Science has been involved with category-defining consumer brands and platforms, including <strong>Dollar Shave Club, Rover, and Liquid Death, among others.</strong></p>
+      </div>
+
+      <!-- MySpace -->
+      <div class="work-item">
+        <div class="work-header">
+          <div class="work-icon" style="background:#1B1A1A; border-radius: 14px;">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="10" cy="12" r="3" fill="white"/>
+              <circle cx="22" cy="12" r="3" fill="white"/>
+              <circle cx="10" cy="22" r="3" fill="white"/>
+              <circle cx="22" cy="22" r="3" fill="white"/>
+              <circle cx="16" cy="17" r="3" fill="white"/>
+            </svg>
+          </div>
+          <span class="work-date">2010</span>
+        </div>
+        <h3 class="work-title">MySpace</h3>
+        <p class="work-desc">Jones later became CEO of MySpace in 2010, stepping into one of the most visible turnaround roles in consumer internet. During his tenure he helped reposition the product and stabilize operations ahead of the company's sale to Specific Media. That combination&mdash;early-stage creation plus operational triage&mdash;became a defining thread of his career: building from scratch, then rebuilding when stakes are highest.</p>
+      </div>
+
+      <!-- Userplane -->
+      <div class="work-item">
+        <div class="work-header">
+          <div class="work-icon" style="background:#3094FE; border-radius: 14px;">
+            <span style="color:#fff;font-size:18px;font-weight:700;">:)</span>
+          </div>
+          <span class="work-date">2006</span>
+        </div>
+        <h3 class="work-title">Userplane</h3>
+        <p class="work-desc">Before Science, Jones helped shape early waves of social and digital media. He founded Userplane, an instant-messaging and embedded communications platform used by major consumer websites; Userplane was acquired by AOL in 2006. After AOL, he launched Tsavo Media, an online media network, which was acquired by Cyberplex for $75 million.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Speaker Callout -->
+  <div class="speaker-callout">
+    <p>Mike is a frequent public speaker on founder psychology, the human traits behind outsized outcomes, and how modern tools&mdash;including AI&mdash;are changing the way people build companies, make decisions, and reinvent themselves.</p>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats-section">
+    <img src="images/mike-outdoor.png" alt="Michael Jones outdoors" class="stats-bg">
+    <div class="stats-overlay"></div>
+    <div class="stats-row">
+      <div class="stat-item">
+        <div class="stat-label">Enterprise Value</div>
+        <div class="stat-number"><span class="dollar">$</span>6.1B</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">Billion Dollar Exits</div>
+        <div class="stat-number">3</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">Followers on<br>Social Media</div>
+        <div class="stat-number">205K</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== KEY OFFERINGS ===== -->
+<section class="offerings" id="offerings">
+  <div class="offerings-inner">
+    <div class="section-label">Key Offerings</div>
+    <p class="offerings-headline">Michael delivers talks that move beyond inspiration into transformation. Blending founder experience with insight into AI and modern leadership, he leaves audiences with sharper thinking, deeper self-awareness, and the conviction to build what comes next.</p>
+
+    <div class="offering-row">
+      <span class="offering-name">Keynotes</span>
+      <span class="offering-sub">(30-60 min) Story + Framework + Takeaways</span>
+    </div>
+    <div class="offering-row">
+      <span class="offering-name">Fireside Chats / Moderated Discussions</span>
+      <span class="offering-sub">Founder / Operator Q&A style</span>
+    </div>
+    <div class="offering-row">
+      <span class="offering-name">Interactive Workshops</span>
+      <span class="offering-sub">Decision-making, Founder dynamics, AI workflows</span>
+    </div>
+    <div class="offering-row">
+      <span class="offering-name">Leadership Offsites</span>
+      <span class="offering-sub">Closed-door, High-trust Sessions</span>
+    </div>
+    <div class="offering-row" style="border-bottom: 1px solid rgba(27,26,26,0.1);">
+      <span class="offering-name">AMAs + Audience Calibration</span>
+      <span class="offering-sub">Rapid-fire, Tactical, Personalized</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TOPICS ===== -->
+<section class="topics" id="topics">
+  <div class="topics-inner">
+    <h2 class="topics-heading">Most Requested Topics</h2>
+
+    <!-- Topic 1 -->
+    <div class="topic-card">
+      <div class="topic-label">Topic One</div>
+      <h3 class="topic-question">Can AI help us become the architects of our own selves?</h3>
+      <div class="topic-divider"></div>
+      <div class="topic-body">
+        <div class="topic-body-spacer"></div>
+        <div class="topic-body-content">
+          <p class="topic-desc">A sharp, personal talk about what happens when you use AI not as advice, but as a high-bandwidth mirror for behavior and decision-making. Michael shares the system he built to map traits, patterns, and blindspots across his own life&mdash;and how that model is now being turned into a platform called Human Architecture.</p>
+          <div class="topic-takeaway">
+            <div class="topic-takeaway-dot"></div>
+            <div>
+              <div class="topic-takeaway-label">Audience leaves with</div>
+              <p class="topic-takeaway-text">A usable model for &ldquo;AI as reflection,&rdquo; prompts that reveal patterns, and a way to turn insight into action without outsourcing agency.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Topic 2 -->
+    <div class="topic-card">
+      <div class="topic-label">Topic Two</div>
+      <h3 class="topic-question">Building impossible things with difficult people</h3>
+      <div class="topic-divider"></div>
+      <div class="topic-body">
+        <div class="topic-body-spacer"></div>
+        <div class="topic-body-content">
+          <p class="topic-desc">Breakout outcomes often come from high-agency, intense, sometimes polarizing personalities. Michael unpacks why the traits that make someone hard to work with are often the same ones that make them capable of building something extraordinary&mdash;and how to tell the difference between signal and chaos.</p>
+          <div class="topic-takeaway">
+            <div class="topic-takeaway-dot"></div>
+            <div>
+              <div class="topic-takeaway-label">Audience leaves with</div>
+              <p class="topic-takeaway-text">A lens for evaluating temperament, early warning signals, and operating tactics for high-stakes, high-tension founding teams.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Topic 3 -->
+    <div class="topic-card">
+      <div class="topic-label">Topic Three</div>
+      <h3 class="topic-question">Impact of Social Media</h3>
+      <div class="topic-divider"></div>
+      <div class="topic-body">
+        <div class="topic-body-spacer"></div>
+        <div class="topic-body-content">
+          <p class="topic-desc">A clear-eyed look at how social platforms shape attention, identity, incentives, and culture&mdash;from someone who has built, run, and invested across every era of social media.</p>
+          <ul class="topic-bullets">
+            <li>How attention markets work: incentives, virality, outrage, and the &ldquo;algorithm as environment.&rdquo;</li>
+            <li>Second-order effects: mental health, loneliness, polarization, and the new status economy.</li>
+            <li>What brands and founders can learn: distribution primitives, community loops, and trust in the feed era.</li>
+            <li>Practical playbook: boundaries, detox design, and rebuilding agency (personal + organizational).</li>
+          </ul>
+          <p class="topic-pdf-note">Topic PDF available on request.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRESS ===== -->
+<section class="press" id="press">
+  <div class="press-inner">
+    <div class="press-header">
+      <div class="section-label">Press + Interviews</div>
+      <p class="press-subtitle">A few interviews and profiles that reflect my work building and backing category-defining companies.</p>
+    </div>
+
+    <div class="press-grid">
+      <!-- Card 1 -->
+      <div class="press-card">
+        <div class="press-card-image bg-teal">
+          <img src="images/press-podcast1.png" alt="Startups Decoded podcast">
+          <span class="press-badge">Podcast</span>
+        </div>
+        <h4 class="press-card-title">Startups Decoded (S2E1) &mdash; How Billion-Dollar Companies Get Built</h4>
+        <p class="press-card-desc">A deep dive on the Science studio model, venture mechanics, and what actually scales.</p>
+        <a href="#" class="press-cta">Listen <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="press-card">
+        <div class="press-card-image bg-dark">
+          <img src="images/press-card2.png" alt="Building Billion Dollar Companies">
+          <span class="press-badge">Video</span>
+        </div>
+        <h4 class="press-card-title">Building $1B+ consumer companies &mdash; Michael Jones, GP @ Science</h4>
+        <p class="press-card-desc">Frameworks for product, distribution, and brand.</p>
+        <a href="#" class="press-cta">Watch <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="press-card">
+        <div class="press-card-image">
+          <img src="images/press-card3.png" alt="Built In LA">
+          <span class="press-badge">Print</span>
+        </div>
+        <h4 class="press-card-title">Built In LA &mdash; 9 things to know about startup studios, venture capital, and building</h4>
+        <p class="press-card-desc">An accessible explainer of the studio thesis + lessons learned across cycles.</p>
+        <a href="#" class="press-cta">Read <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="press-card">
+        <div class="press-card-image">
+          <img src="images/press-card4-bg.png" alt="Santa Monica Daily Press">
+          <span class="press-badge">Print</span>
+        </div>
+        <h4 class="press-card-title">Santa Monica Daily Press &mdash; Faces of Silicon Beach: Mike Jones</h4>
+        <p class="press-card-desc">A profile on building companies in LA and the long arc of the Science platform.</p>
+        <a href="#" class="press-cta">Read <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="press-card">
+        <div class="press-card-image bg-light">
+          <img src="images/press-gallery.png" alt="The Gallery">
+          <span class="press-badge">Video</span>
+        </div>
+        <h4 class="press-card-title">The Gallery &mdash; 13 Questions with Mike Jones, CEO of Science Inc.</h4>
+        <p class="press-card-desc">Rapid-fire takes on leadership, operating cadence, and how to pick winnable markets.</p>
+        <a href="#" class="press-cta">Watch <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="press-card">
+        <div class="press-card-image bg-blue">
+          <img src="images/press-dear20.png" alt="Dear Twentysomething">
+          <span class="press-badge">Podcast</span>
+        </div>
+        <h4 class="press-card-title">Dear Twentysomething &mdash; Founder of Science Inc. &amp; fmr CEO of MySpace</h4>
+        <p class="press-card-desc">Career lessons, reinvention, and building through volatility.</p>
+        <a href="#" class="press-cta">Listen <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+
+      <!-- Card 7 -->
+      <div class="press-card">
+        <div class="press-card-image bg-yellow">
+          <img src="images/press-grace.png" alt="Grace Gong">
+          <span class="press-badge">Video</span>
+        </div>
+        <h4 class="press-card-title">Grace Gong &mdash; Meet Michael Jones: The mastermind behind billion-dollar startups</h4>
+        <p class="press-card-desc">The studio approach to creating breakout brands (Liquid Death, etc.).</p>
+        <a href="#" class="press-cta">Watch <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+
+      <!-- Card 8 -->
+      <div class="press-card">
+        <div class="press-card-image">
+          <img src="images/press-labj.png" alt="LA Business Journal">
+          <span class="press-badge">Print</span>
+        </div>
+        <h4 class="press-card-title">Los Angeles Business Journal &mdash; Science Projects</h4>
+        <p class="press-card-desc">Coverage of Science&rsquo;s venture-building engine.</p>
+        <a href="#" class="press-cta">Read <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+
+      <!-- Card 9 -->
+      <div class="press-card">
+        <div class="press-card-image">
+          <img src="images/press-dotla.png" alt="dot.LA">
+          <span class="press-badge">Print</span>
+        </div>
+        <h4 class="press-card-title">dot.LA / NewsBreak &mdash; Free Advice From The CEO Who Turned MySpace Around</h4>
+        <p class="press-card-desc">Operator advice on clarity, momentum, and execution.</p>
+        <a href="#" class="press-cta">Read <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PARTNERS ===== -->
+<section class="partners" id="partners">
+  <div class="partners-inner">
+    <h2 class="partners-heading">Partners &amp;<br>Investments</h2>
+    <p class="partners-quote">Whether it&rsquo;s enhancing consumer experiences, creating new economic opportunities, or innovating on new technologies, the common thread at Science is that we nurture the brand from the beginning.</p>
+  </div>
+  <div class="logo-marquee">
+    <div class="logo-track">
+      <img src="images/logo-dsc.png" alt="Dollar Shave Club">
+      <img src="images/logo-ld.png" alt="Liquid Death">
+      <img src="images/logo-playvs.png" alt="PlayVS">
+      <img src="images/logo-urbanremedy.png" alt="Urban Remedy">
+      <img src="images/logo-dsc.png" alt="Dollar Shave Club">
+      <img src="images/logo-ld.png" alt="Liquid Death">
+      <img src="images/logo-playvs.png" alt="PlayVS">
+      <img src="images/logo-urbanremedy.png" alt="Urban Remedy">
+      <img src="images/logo-dsc.png" alt="Dollar Shave Club">
+      <img src="images/logo-ld.png" alt="Liquid Death">
+      <img src="images/logo-playvs.png" alt="PlayVS">
+      <img src="images/logo-urbanremedy.png" alt="Urban Remedy">
+    </div>
+  </div>
+</section>
+
+<!-- ===== SOCIALS ===== -->
+<section class="socials" id="socials">
+  <div class="socials-inner">
+    <div class="socials-photos">
+      <img src="images/social-1.png" alt="Michael Jones">
+      <img src="images/social-2.png" alt="Michael Jones">
+      <img src="images/social-3.png" alt="Michael Jones">
+      <img src="images/social-4.png" alt="Michael Jones">
+      <img src="images/social-5.png" alt="Michael Jones">
+      <img src="images/social-6.png" alt="Michael Jones">
+      <img src="images/social-7.png" alt="Michael Jones">
+    </div>
+    <div class="socials-cta">
+      <h3>Follow Michael on social media</h3>
+      <div class="social-links">
+        <a href="https://www.instagram.com/mikejonesbusiness" target="_blank">Instagram</a>
+        <a href="https://youtube.com/@mikejones" target="_blank">YouTube</a>
+        <a href="https://tiktok.com/@mikejones" target="_blank">TikTok</a>
+        <a href="https://linkedin.com/in/mikejones" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer" id="contact">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <h2 class="footer-headline">Let Michael spark the thinking behind your next breakthrough.</h2>
+      <a href="mailto:booking@mjonesone.com" class="footer-book-btn">
+        Book Mike
+        <span class="arrow-circle">
+          <svg viewBox="0 0 20 20" fill="none"><path d="M5 10h10M11 6l4 4-4 4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </a>
+    </div>
+    <div class="footer-divider"></div>
+    <div class="footer-columns">
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <a href="#bio">About</a>
+        <a href="#offerings">Speaking</a>
+        <a href="#press">Press</a>
+        <a href="mailto:booking@mjonesone.com">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Socials</h4>
+        <a href="https://www.instagram.com/mikejonesbusiness" target="_blank">Instagram</a>
+        <a href="https://linkedin.com/in/mikejones" target="_blank">LinkedIn</a>
+        <a href="https://youtube.com/@mikejones" target="_blank">Youtube</a>
+        <a href="https://tiktok.com/@mikejones" target="_blank">TikTok</a>
+      </div>
+      <div class="footer-col">
+        <h4>Links</h4>
+        <a href="https://science-inc.com" target="_blank">Science Ventures</a>
+        <a href="https://humanarchitecture.io" target="_blank">Human Architecture</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copyright">&copy; Michael Jones 2026</span>
+      <a href="#hero" class="footer-backtop">Back to top</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== JS ===== -->
+<script>
+// Nav scroll effect
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+</script>
+
+</body>
+</html>
