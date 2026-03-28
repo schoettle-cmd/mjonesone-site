@@ -208,21 +208,26 @@ ul { list-style: none; }
 }
 .socials-cluster img {
   position: absolute; width: 130px; height: 185px;
-  object-fit: cover; border-radius: 16px;
+  object-fit: cover;
+  border-radius: 16px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  isolation: isolate;
+  will-change: transform;
   transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
               left 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
               top 0.6s cubic-bezier(0.34, 1.56, 0.64, 1),
               box-shadow 0.4s ease;
 }
 /* Default: fanned out in arc — 5 top, 2 bottom */
-.socials-cluster img:nth-child(1) { left: 2%;  top: 10%; transform: rotate(-12deg); z-index: 3; }
-.socials-cluster img:nth-child(2) { left: 15%; top: 0%;  transform: rotate(-5deg); z-index: 4; }
-.socials-cluster img:nth-child(3) { left: 33%; top: -5%; transform: rotate(0deg); z-index: 7; }
-.socials-cluster img:nth-child(4) { left: 51%; top: 0%;  transform: rotate(5deg); z-index: 5; }
-.socials-cluster img:nth-child(5) { left: 67%; top: 8%;  transform: rotate(10deg); z-index: 6; }
-.socials-cluster img:nth-child(6) { left: 24%; top: 50%; transform: rotate(-8deg); z-index: 2; }
-.socials-cluster img:nth-child(7) { left: 46%; top: 48%; transform: rotate(6deg); z-index: 1; }
+.socials-cluster img:nth-child(1) { left: 2%;  top: 10%; transform: rotate(-12deg) translateZ(0); z-index: 3; }
+.socials-cluster img:nth-child(2) { left: 15%; top: 0%;  transform: rotate(-5deg) translateZ(0); z-index: 4; }
+.socials-cluster img:nth-child(3) { left: 33%; top: -5%; transform: rotate(0deg) translateZ(0); z-index: 7; }
+.socials-cluster img:nth-child(4) { left: 51%; top: 0%;  transform: rotate(5deg) translateZ(0); z-index: 5; }
+.socials-cluster img:nth-child(5) { left: 67%; top: 8%;  transform: rotate(10deg) translateZ(0); z-index: 6; }
+.socials-cluster img:nth-child(6) { left: 24%; top: 50%; transform: rotate(-8deg) translateZ(0); z-index: 2; }
+.socials-cluster img:nth-child(7) { left: 46%; top: 48%; transform: rotate(6deg) translateZ(0); z-index: 1; }
 /* Hover: cluster into stack */
 .socials-cluster:hover img:nth-child(1) { left: 38%; top: 30%; transform: rotate(-6deg); z-index: 7; }
 .socials-cluster:hover img:nth-child(2) { left: 40%; top: 28%; transform: rotate(4deg); z-index: 6; }
